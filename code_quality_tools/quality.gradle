@@ -14,7 +14,7 @@ task pmd(type: Pmd) {
 
 plugins.apply('findbugs')
 
-task findbugs(type: FindBugs) {
+task findbugs(type: FindBugs, dependsOn: "assembleDebug") {
     ignoreFailures = false // Fail early.
     effort = 'max'
     reportLevel = 'low' // Report even low priority problems.
